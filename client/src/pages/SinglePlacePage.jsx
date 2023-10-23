@@ -85,13 +85,14 @@ Show more photos</button>
     </div>
     
     </div>
-    <div className="bg-white -mx-8 ox-8 py-9 border-t">
+    {place.extraInfo && (<div className="bg-white -mx-8 ox-8 py-9 border-t">
     <div>
         <h2 className="font-semibold text-2xl">Extra Information</h2>
     </div>
     <div className="mb-4 mt-2 text-sm text-gray-700 leading-5 my-4">{place.extraInfo}</div>
         
-    </div>
+    </div>)}
+    
     
         </div>
     

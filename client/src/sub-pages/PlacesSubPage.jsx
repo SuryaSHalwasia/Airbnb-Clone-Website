@@ -46,7 +46,18 @@ export default function PlacesSubPage(){
                 setPrice(data.price)
             })
         }
-
+        else{
+            setTitle('')
+                setAddress('')
+                setAddedPhots('')
+                setDescription('')
+                setFeatures('')
+                setExtraInfo('')
+                setCheckIn('')
+                setCheckOut('')
+                setMaxGuests('')
+                setPrice('')
+        }
     },[id])
     
     
@@ -75,6 +86,13 @@ export default function PlacesSubPage(){
     async function savePlace(ev){
         ev.preventDefault()
 
+        if(title === '' || address === '' || addedPhotos[0] === '' || description === '' ||
+                            checkIn === '' || checkOut === '' || maxGuests === '' || price === '')
+        {
+            alert(addedPhotos[0])
+            alert("Please fill all the values")
+            return
+        }
         const placeData = {title, address, addedPhotos, description, features, 
             extraInfo, checkIn, checkOut, maxGuests, price}
         if(!id)
